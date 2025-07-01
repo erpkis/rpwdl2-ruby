@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 require_relative "lib/rpwdl2/version"
-
 Gem::Specification.new do |spec|
   spec.name = "rpwdl2-ruby"
-  binding.pry
   spec.version = Rpwdl2::VERSION
   spec.authors = ["erpkis"]
   spec.email = ["eryk.kisielewski@dsi24.com"]

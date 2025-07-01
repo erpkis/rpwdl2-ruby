@@ -38,10 +38,12 @@ GEM
     lint_roller (1.1.0)
     logger (1.7.0)
     method_source (1.1.0)
+    mini_portile2 (2.8.9)
     minitest (5.25.5)
     net-http (0.6.0)
       uri
-    nokogiri (1.18.8-x86_64-linux-gnu)
+    nokogiri (1.18.8)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     observer (0.1.2)
     ostruct (0.6.2)
@@ -134,14 +136,12 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (>= 2.0)
-  faraday
   minitest (>= 5.0)
   pry
   rake (~> 13.0)
   rpwdl2-ruby!
   rspec (~> 3.0)
   rubocop (~> 1.21)
-  sequel
   solargraph
   vcr (>= 6.0)
   webmock (>= 3.0)

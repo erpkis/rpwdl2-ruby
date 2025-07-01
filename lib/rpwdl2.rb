@@ -2,6 +2,7 @@
 
 require_relative "rpwdl2/version"
 require_relative "rpwdl2/client"
+require_relative "rpwdl2/validator"
 module Rpwdl2
     class << self # ulatwienie zamiast pisac wszedzie w metodach def self.configuration to deklaruje i mam
         attr_accessor :api_key, :base_url, :timeout, :logger
@@ -23,7 +24,7 @@ module Rpwdl2
         def reset!
             @client = nil
             @api_key = nil
-            @base_url = 'https://api.ezdrowie.gov.pl/rpwdl'
+            @base_url = 'https://api.ezdrowie.gov.pl/rpwdl/'
             @timeout = 30
             @logger = nil
         end

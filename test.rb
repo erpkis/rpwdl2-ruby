@@ -10,8 +10,8 @@ puts "=== Manual Test Script ==="
 # Test 1: Konfiguracja
 puts "\n1. Testing configuration..."
 Rpwdl2.configure do |config|
-  config.base_url = 'https://api.ezdrowie.gov.pl/rpwdl/'
-  config.timeout = 10
+  config.base_url = 'https://api.ezdrowie.gov.pl/rpwdl'
+  config.timeout = 900
   config.logger = logger
 end
 
