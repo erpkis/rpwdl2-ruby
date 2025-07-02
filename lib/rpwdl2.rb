@@ -5,18 +5,16 @@ require_relative "rpwdl2/client"
 require_relative "rpwdl2/validator"
 module Rpwdl2
     class << self # ulatwienie zamiast pisac wszedzie w metodach def self.configuration to deklaruje i mam
-        attr_accessor :api_key, :base_url, :timeout, :logger
+        attr_accessor :api_key, :base_url
 
         def configure
             yield(self) if block_given?
         end
 
         def client
-            @client ||= Client.new(
+            @client ||= Http::Client.new(
                 api_key: api_key,
-                base_url: base_url,
-                timeout: timeout,
-                logger: logger
+                base_url: base_url
             )
         end
 
@@ -25,8 +23,6 @@ module Rpwdl2
             @client = nil
             @api_key = nil
             @base_url = 'https://api.ezdrowie.gov.pl/rpwdl/'
-            @timeout = 30
-            @logger = nil
         end
 
     end

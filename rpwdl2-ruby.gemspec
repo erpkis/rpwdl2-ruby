@@ -35,7 +35,6 @@ Gem::Specification.new do |spec|
   # Dependencies
   spec.add_dependency "sequel", ">= 5.0"
   spec.add_dependency "json", ">= 2.0"
-  spec.add_dependency "faraday"
   
   # Development dependencies
   spec.add_development_dependency "bundler", ">= 2.0"

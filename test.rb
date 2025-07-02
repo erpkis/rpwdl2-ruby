@@ -11,18 +11,14 @@ puts "=== Manual Test Script ==="
 puts "\n1. Testing configuration..."
 Rpwdl2.configure do |config|
   config.base_url = 'https://api.ezdrowie.gov.pl/rpwdl'
-  config.timeout = 900
-  config.logger = logger
 end
 
 puts "✓ Base URL: #{Rpwdl2.base_url}"
-puts "✓ Timeout: #{Rpwdl2.timeout}"
 
 # Test 2: Client creation
 puts "\n2. Testing client creation..."
 client = Rpwdl2.client
 puts "✓ Client created: #{client.class}"
-puts "✓ Connection: #{client.connection.class}"
 binding.pry
 # Test 3: Walidacja
 # puts "\n3. Testing validation..."
