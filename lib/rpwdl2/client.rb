@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require 'net/http'
-require 'pry'
 require 'json'
 
 module Rpwdl2

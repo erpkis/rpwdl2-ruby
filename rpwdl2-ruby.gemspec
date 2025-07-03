@@ -33,12 +33,10 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
   # Dependencies
-  spec.add_dependency "sequel", '~> 5.0'
   spec.add_dependency "json", "~> 2.0"
   
   # Development dependencies
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "solargraph"
   spec.add_development_dependency "pry"
   # For more information and examples about making a new gem, check out our
