@@ -16,9 +16,17 @@ module Rpwdl2
                 @base_url = base_url
             end
 
-            def get_ordering_provider(body)
-                Rpwdl2::Validator.validate_ordering_provider(body)
-                make_post_request("/podmioty/ksiegi-rejestrowe/szukaj-jeden", body)
+            def get_ordering_provider(params)
+                bodyHash = nil
+                if params["nip"]
+                    bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => "healthcare_provider_nip", "wartoscIdentyfikatora" => params["nip"]}}
+                elsif params["ks_rej"]
+                    bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => ledger_number, "wartoscIdentyfikatora" => params["ks_rej"]}}
+                else
+                    raise 'Brak numeru księgi resortowej lub numeru NIP w parametrach.'
+                end
+                Rpwdl2::Validator.validate_ordering_provider(bodyHash)
+                make_post_request("/podmioty/ksiegi-rejestrowe/szukaj-jeden", bodyHash)
             end
 
             private
