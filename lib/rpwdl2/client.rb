@@ -20,7 +20,7 @@ module Rpwdl2
                 if params["nip"]
                     bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => "healthcare_provider_nip", "wartoscIdentyfikatora" => params["nip"]}}
                 elsif params["ks_rej"]
-                    bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => ledger_number, "wartoscIdentyfikatora" => params["ks_rej"]}}
+                    bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => "ledger_number", "wartoscIdentyfikatora" => params["ks_rej"]}}
                 else
                     raise 'Brak numeru księgi resortowej lub numeru NIP w parametrach.'
                 end
