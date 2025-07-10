@@ -17,9 +17,9 @@ module Rpwdl2
 
             def get_ordering_provider(params)
                 bodyHash = nil
-                if params["nip"]
+                if params["nip"] && !params["nip"].empty?
                     bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => "healthcare_provider_nip", "wartoscIdentyfikatora" => params["nip"]}}
-                elsif params["ks_rej"]
+                elsif params["ks_rej"] && !params["ks_rej"].empty?
                     bodyHash = {"unikalnyIdentyfikatorKsiegi" => {"typIdentyfikatora" => "ledger_number", "wartoscIdentyfikatora" => params["ks_rej"]}}
                 else
                     raise 'Brak numeru księgi resortowej lub numeru NIP w parametrach.'
